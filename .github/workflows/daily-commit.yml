@@ -1,0 +1,27 @@
+name: Daily Contribution Graph Maintainer
+
+on:
+  schedule:
+    # Runs everyday at 12:00 PM UTC (Adjust to your preferred time)
+    - cron: '0 12 * * *'
+  # Allows you to manually trigger the workflow anytime from the Actions tab
+  workflow_dispatch: 
+
+jobs:
+  make-contribution:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Create changes
+        run: |
+          echo "Last heartbeat: $(date)" > heartbeat.txt
+
+      - name: Commit and Push changes
+        run: |
+          git config --local user.email "your-github-email@example.com"
+          git config --local user.name "Your GitHub Username"
+          git add heartbeat.txt
+          git commit -m "chore: daily heartbeat update [skip ci]"
+          git push
