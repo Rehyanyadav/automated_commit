@@ -20,8 +20,8 @@ jobs:
 
       - name: Commit and Push changes
         run: |
-          git config --local user.email "your-github-email@example.com"
-          git config --local user.name "Your GitHub Username"
+          git config --local user.email "ritulyadav1984@gmail.com"
+          git config --local user.name "Rehyanyadav"
           git add heartbeat.txt
           git commit -m "chore: daily heartbeat update [skip ci]"
           git push
