@@ -3,7 +3,7 @@ name: Daily Contribution Graph Maintainer
 on:
   schedule:
     # Runs everyday at 12:00 AM UTC
-    - cron: '0 12 * * *'
+    - cron: '9 7 * * *'
   # Allows you to manually trigger the workflow anytime from the Actions tab
   workflow_dispatch: 
 
